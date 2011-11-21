@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+      reader:
+        opt_out_of_mailing_list: "Tick this box if you <strong>do not</strong> want to go on the mailing list"
+        mailing_list_digest: "Get mailing list as digest instead of individual messages"
+        mailing_list_notmetoo: "Don't receive your own messages to the mailing list"
+        mailing_list_nomail: "Switch off the mailing list temporarily but remain a member"
+    errors:
+      models:
+        download:
+          attributes:
+  config:
+    download:
+  download: "download"
+  downloads: "Downloads"
+  downloads_extension:
+    permission_denied: "You do not have permission to download the requested file."

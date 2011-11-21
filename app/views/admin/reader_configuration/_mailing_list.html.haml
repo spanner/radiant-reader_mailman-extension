@@ -1,0 +1,15 @@
+#mailing_list_settings.box
+  %h3
+    .actions
+      = button_to t("edit"), edit_admin_reader_settings_url, :method => :get
+    =t("reader_mailman_extension.mailing_list_configuration")
+  %p.ruled
+    = show_config 'reader.mailman.list_name'
+  %p.ruled
+    = show_config 'reader.mailman.username'
+  %p.ruled
+    = show_config 'reader.mailman.password'
+  %p.ruled
+    = show_config 'reader.mailman.port'
+  %p.ruled
+    = show_config 'reader.mailman.host'
