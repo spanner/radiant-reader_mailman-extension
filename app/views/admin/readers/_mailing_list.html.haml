@@ -1,13 +1,21 @@
-#mailing_list
-  %p
-    = f.check_box :opt_out_of_mailing_list
-    = f.label :opt_out_of_mailing_list, :class => "checkbox"
-  %br
-    = f.check_box :mailing_list_digested
-    = f.label :mailing_list_digested, :class => "checkbox"
-  %br
-    = f.check_box :mailing_list_notmetoo
-    = f.label :mailing_list_notmetoo, :class => "checkbox"
-  %br
-    = f.check_box :mailing_list_nomail
-    = f.label :mailing_list_nomail, :class => "checkbox"
+- fields_for @reader do |rf|
+  #mailing_list
+    %h3
+      = t('mailing_list_preferences')
+    %p
+      = rf.check_box :opt_out_of_mailing_list
+      = rf.label :opt_out_of_mailing_list
+      %br
+      - @reader.build_mailing_list_membership
+      - rf.fields_for :mailing_list_membership do |mf|
+        = mf.check_box :nomail
+        = mf.label :nomail
+        %br
+        = mf.check_box :digest
+        = mf.label :digest
+        %br
+        = mf.check_box :plain
+        = mf.label :plain
+        %br
+        = mf.check_box :not_metoo
+        = mf.label :not_metoo

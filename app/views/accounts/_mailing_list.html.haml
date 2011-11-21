@@ -1,0 +1,20 @@
+- fields_for @reader do |rf|
+  - @reader.build_mailing_list_membership unless @reader.mailing_list_membership
+  - rf.fields_for :mailing_list_membership do |mf|
+    #mailing_list
+      %h3
+        = t('mailing_list_preferences')
+      %p
+        = t('control_your_subscription', :list_name => "#{Radiant.config['reader.mailman.list_name']}@")
+        %br
+        = mf.check_box :nomail
+        = mf.label :nomail
+        %br
+        = mf.check_box :digest
+        = mf.label :digest
+        %br
+        = mf.check_box :plain
+        = mf.label :plain
+        %br
+        = mf.check_box :not_metoo
+        = mf.label :not_metoo

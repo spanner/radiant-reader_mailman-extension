@@ -10,8 +10,13 @@ class MailingListMembership < ActiveRecord::Base
     self
   end
   
-  def exist?(address)
-    !!self.find_by_id(address)
+  [:digest, :not_metoo, :nomail, :plain].each do |col|
+    define_method(col) do
+      read_attribute(col) == 'Y'
+    end
+    define_method("#{col}=") do |value|
+      write_attribute(col, (!!value ? 'Y' : 'N'))
+    end
   end
   
 end

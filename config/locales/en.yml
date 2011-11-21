@@ -1,18 +1,24 @@
 en:
   activerecord:
     attributes:
-      reader:
-        opt_out_of_mailing_list: "Tick this box if you <strong>do not</strong> want to go on the mailing list"
-        mailing_list_digest: "Get mailing list as digest instead of individual messages"
-        mailing_list_notmetoo: "Don't receive your own messages to the mailing list"
-        mailing_list_nomail: "Switch off the mailing list temporarily but remain a member"
+      mailing_list_membership:
+        nomail: "Tick this box if you <strong>do not</strong> want to receive mailing list messages"
+        digest: "Get the mailing list as a daily digest instead of individual messages"
+        plain: "Get digest messages in plain text rather than HTML"
+        not_metoo: "Don't receive an echo of your own messages to the mailing list"
     errors:
       models:
         download:
           attributes:
   config:
-    download:
-  download: "download"
-  downloads: "Downloads"
-  downloads_extension:
-    permission_denied: "You do not have permission to download the requested file."
+    reader:
+      mailman:
+        list_name: mailing list name
+        host: database host
+        port: database port
+        username: db username
+        password: db password
+  control_your_subscription: "You can also control your membership of the %{list_name} mailing list from here:"
+  mailing_list: "Mailing list"
+  mailing_list_configuration: "Mailing list configuration"
+  mailing_list_preferences: "Mailing list preferences"
