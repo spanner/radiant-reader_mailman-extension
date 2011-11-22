@@ -3,9 +3,6 @@
     %h3
       = t('mailing_list_preferences')
     %p
-      = rf.check_box :opt_out_of_mailing_list
-      = rf.label :opt_out_of_mailing_list
-      %br
       - @reader.build_mailing_list_membership
       - rf.fields_for :mailing_list_membership do |mf|
         = mf.check_box :nomail
