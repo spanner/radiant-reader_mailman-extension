@@ -18,7 +18,8 @@ en:
         port: database port
         username: db username
         password: db password
-  control_your_subscription: "You can also control your membership of the %{list_name} mailing list from here:"
+  control_your_subscription: "You can also control your membership of the %{list_name} mailing list from here."
   mailing_list: "Mailing list"
   mailing_list_configuration: "Mailing list configuration"
   mailing_list_preferences: "Mailing list preferences"
+  more_options: "Show more options"

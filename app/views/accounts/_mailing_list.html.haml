@@ -9,8 +9,8 @@
         %br
         = mf.check_box :nomail
         = mf.label :nomail
-        %span.more
-          %br
+        %br
+        %span#more_mailing_list_options.hidden
           = mf.check_box :digest
           = mf.label :digest
           %br
@@ -19,3 +19,6 @@
           %br
           = mf.check_box :not_metoo
           = mf.label :not_metoo
+          %br
+        %a.toggle.small{:href => '#', :rel => '#more_mailing_list_options'}
+          =t('more_options')

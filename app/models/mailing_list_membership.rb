@@ -15,8 +15,17 @@ class MailingListMembership < ActiveRecord::Base
       read_attribute(col) == 'Y'
     end
     define_method("#{col}=") do |value|
-      write_attribute(col, (!!value ? 'Y' : 'N'))
+      write_attribute(col, to_yesno(value))
     end
+    define_method("#{col}_before_type_cast") do
+      read_attribute(col) == 'Y' ? 1 : 0
+    end
+  end
+
+private
+
+  def to_yesno(value)
+    (value && value.to_i != 0) ? 'Y' : 'N'
   end
   
 end
