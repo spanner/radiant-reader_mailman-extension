@@ -1,5 +1,5 @@
 - fields_for @reader do |rf|
-  - @reader.build_mailing_list_membership unless @reader.mailing_list_membership
+  - @reader.mailing_list_membership ||= @reader.build_mailing_list_membership
   - rf.fields_for :mailing_list_membership do |mf|
     #mailing_list
       %h3
